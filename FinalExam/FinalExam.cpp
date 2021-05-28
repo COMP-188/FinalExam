@@ -8,6 +8,7 @@
  */
 
 #include <iostream>
+#include <cassert>
 using namespace std;
 
 //prototypes
@@ -35,15 +36,15 @@ int printMenu();
 				break;
 				// Calculate total
 			case 2:
-				displayArray(arr, SIZE);
+				//displayArray(arr, SIZE);
 				break;
 				// Print total
 			case 3:
-				cout << "\nThe sum of all elements in the array is: " << sumOfAll(arr, SIZE) << endl;
+				//cout << "\nThe sum of all elements in the array is: " << sumOfAll(arr, SIZE) << endl;
 				break;
 				// Exit
 			case 4:
-				allZero(arr, SIZE);
+				//allZero(arr, SIZE);
 				break;
 				// Exit
 			case 5:
@@ -83,4 +84,17 @@ int printMenu() {
 	} while (choice <= 0 || choice >= 6);
 	return choice;
 }
+/**
+ * <code>fillArray</code> is a function that will
+ * fill in the elements of an array.
+ * <BR>
+ * @param <code>arr<code> The array to be filled in.
+ * @param <code>size<code> The size of the array.
+ */
+void fillArray(int arr[], const int size) {
 
+	for (int i = 0; i < size; i++) {
+		cout << "\nEnter an element for the array at " << i + 1 << ": ";
+		cin >> arr[i];
+	}
+}
