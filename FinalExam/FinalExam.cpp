@@ -16,6 +16,7 @@ int printMenu();
 void fillArray(int[], const int);
 void displayArray(const int[], const int);
 int sumOfAll(const int[], const int);
+void allZero(int[], const int);
 
 	/**
  * <code>main</code> is the main function of this program.
@@ -47,7 +48,7 @@ int sumOfAll(const int[], const int);
 				break;
 				
 			case 4:
-				//allZero(arr, SIZE);
+				allZero(arr, SIZE);
 				break;
 				
 			case 5:
@@ -129,4 +130,18 @@ int sumOfAll(const int arr[], const int size) {
 		sum += arr[i];
 	}
 	return sum;
+}
+/**
+ * <code>allZero</code> resets all the elements of the array to 0.
+ * <BR>
+ * @param arr The array containing the values.
+ * @param size The size of the array.
+ * @return the sum of all elements of the array.
+ */
+void allZero(int arr[], const int size) {
+
+	for (int i = 0; i < size; i++) {
+		arr[i] = 0;
+	}
+	cout << "\nSuccessfully updated!\n";
 }
