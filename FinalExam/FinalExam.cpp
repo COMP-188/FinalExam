@@ -13,6 +13,9 @@ using namespace std;
 
 //prototypes
 int printMenu();
+void fillArray(int[], const int);
+void displayArray(const int[], const int);
+int sumOfAll(const int[], const int);
 
 	/**
  * <code>main</code> is the main function of this program.
@@ -40,7 +43,7 @@ int printMenu();
 				break;
 				
 			case 3:
-				//cout << "\nThe sum of all elements in the array is: " << sumOfAll(arr, SIZE) << endl;
+				cout << "\nThe sum of all elements in the array is: " << sumOfAll(arr, SIZE) << endl;
 				break;
 				
 			case 4:
@@ -111,4 +114,19 @@ void displayArray(const int arr[], const int size) {
 		cout << arr[i] << ' ';
 	}
 	cout << endl;
+}
+/**
+ * <code>sumOfAll</code> sums all the elements
+ * in the array of integers.
+ * <BR>
+ * @param arr The array containing the values.
+ * @param size The size of the array.
+ * @return the sum of all elements of the array.
+ */
+int sumOfAll(const int arr[], const int size) {
+	int sum = 0;
+	for (int i = 0; i < size; i++) {
+		sum += arr[i];
+	}
+	return sum;
 }
