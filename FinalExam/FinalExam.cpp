@@ -98,11 +98,15 @@ int printMenu() {
  * @param <code>size<code> The size of the array.
  */
 void fillArray(int arr[], const int size) {
+	assert(arr > 0);//pre-condition
+	int i;
 
-	for (int i = 0; i < size; i++) {
+	for (i = 0; i < size; i++) {
+
 		cout << "\nEnter an element for the array at " << i + 1 << ": ";
 		cin >> arr[i];
 	}
+	assert(size == i);//post-condition
 }
 /**
  * <code>displayArray</code> prints out the value
@@ -112,10 +116,15 @@ void fillArray(int arr[], const int size) {
  * @param <code>size<code> The size of the array.
  */
 void displayArray(const int arr[], const int size) {
+	assert(arr > 0);//pre-condition
+	int i;
+
 	cout << endl;
-	for (int i = 0; i < size; i++) {
+	for (i = 0; i < size; i++) {
 		cout << arr[i] << ' ';
 	}
+
+	assert(size == i);//post-condition
 	cout << endl;
 }
 /**
@@ -127,10 +136,14 @@ void displayArray(const int arr[], const int size) {
  * @return the sum of all elements of the array.
  */
 int sumOfAll(const int arr[], const int size) {
-	int sum = 0;
-	for (int i = 0; i < size; i++) {
+	assert(arr > 0);//pre-condition
+
+	int sum = 0, i;
+	for (i = 0; i < size; i++) {
 		sum += arr[i];
 	}
+	assert(size == i);//post-condition
+
 	return sum;
 }
 /**
@@ -141,9 +154,11 @@ int sumOfAll(const int arr[], const int size) {
  * @return the sum of all elements of the array.
  */
 void allZero(int arr[], const int size) {
-
-	for (int i = 0; i < size; i++) {
+	assert(arr > 0);//pre-condition
+	int i;
+	for ( i = 0; i < size; i++) {
 		arr[i] = 0;
 	}
+	assert(size == i);//post-condition
 	cout << "\nSuccessfully updated!\n";
 }
