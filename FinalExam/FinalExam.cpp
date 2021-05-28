@@ -30,26 +30,26 @@ int printMenu();
 			choice = printMenu();
 
 			switch (choice) {
-				// Enter quantity
+				
 			case 1:
 				fillArray(arr, SIZE);
 				break;
-				// Calculate total
+				
 			case 2:
-				//displayArray(arr, SIZE);
+				displayArray(arr, SIZE);
 				break;
-				// Print total
+				
 			case 3:
 				//cout << "\nThe sum of all elements in the array is: " << sumOfAll(arr, SIZE) << endl;
 				break;
-				// Exit
+				
 			case 4:
 				//allZero(arr, SIZE);
 				break;
-				// Exit
+				
 			case 5:
 				break;
-				// Exit
+				
 			default:
 				assert(true);
 			}
@@ -97,4 +97,18 @@ void fillArray(int arr[], const int size) {
 		cout << "\nEnter an element for the array at " << i + 1 << ": ";
 		cin >> arr[i];
 	}
+}
+/**
+ * <code>displayArray</code> prints out the value
+ * of each of the elements of the array.
+ * <BR>
+ * @param <code>arr<code> The array containing the values.
+ * @param <code>size<code> The size of the array.
+ */
+void displayArray(const int arr[], const int size) {
+	cout << endl;
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << ' ';
+	}
+	cout << endl;
 }
