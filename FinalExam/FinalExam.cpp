@@ -10,8 +10,77 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-	
+//prototypes
+int printMenu();
+
+	/**
+ * <code>main</code> is the main function of this program.
+ * <BR>
+ * @return Returns 0 if success, any other value otherwise.
+ */
+	int main()
+	{
+		int choice;
+		const int SIZE = 15;
+
+		int arr[SIZE] = {};
+
+		do {
+			choice = printMenu();
+
+			switch (choice) {
+				// Enter quantity
+			case 1:
+				fillArray(arr, SIZE);
+				break;
+				// Calculate total
+			case 2:
+				displayArray(arr, SIZE);
+				break;
+				// Print total
+			case 3:
+				cout << "\nThe sum of all elements in the array is: " << sumOfAll(arr, SIZE) << endl;
+				break;
+				// Exit
+			case 4:
+				allZero(arr, SIZE);
+				break;
+				// Exit
+			case 5:
+				break;
+				// Exit
+			default:
+				assert(true);
+			}
+		} while (choice != 5);
+
+		cout << "\nHave a nice day:)" << endl;
+		return 0;
+	}
+/**
+ * <code>printMenu</code> shows a menu and accepts the choice
+ * from the user which is returned.
+ * <BR>
+ * @return Returns the menu choice.
+ */
+int printMenu() {
+	int choice;
+
+	do {
+		cout << "\n == MENU ==\n";
+		cout << "\n1) Enter data in array";
+		cout << "\n2) Show array";
+		cout << "\n3) Sum of all elements of the array";
+		cout << "\n4) Make all elements of the array zero";
+		cout << "\n5) Exit";
+
+		cout << "\nEnter the choice: ";
+		cin >> choice;
+
+		if (choice <= 0 || choice >= 6) {
+			cout << "\nWrong choice, try again.\n";
+		}
+	} while (choice <= 0 || choice >= 6);
+	return choice;
 }
 
