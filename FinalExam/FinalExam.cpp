@@ -28,7 +28,9 @@ void allZero(int[], const int);
 		int choice;
 		const int SIZE = 15;
 
-		int arr[SIZE] = {};
+		//int arr[SIZE] = {};
+		//Even tho it was initialized, i do it again with a different method
+		int arr[SIZE] = { 0 };
 
 		do {
 			choice = printMenu();
